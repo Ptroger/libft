@@ -76,7 +76,7 @@ t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-size_t			ft_trimlen(char *str, size_t len);
+size_t			ft_trimlen(char *str);
 int				ft_isspace(char c);
 
 #endif

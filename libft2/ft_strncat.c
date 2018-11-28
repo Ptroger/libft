@@ -6,7 +6,7 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 14:20:58 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/27 11:14:29 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 13:54:20 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t nb)
 {
-	size_t i;
-	int j;
+	size_t	i;
+	int		j;
 
 	i = 0;
 	j = 0;
 	while (dest[j])
 		j++;
-	while (i < nb)
+	while (i < nb && src[i])
 	{
 		dest[j] = src[i];
 		i++;
@@ -30,4 +30,3 @@ char	*ft_strncat(char *dest, const char *src, size_t nb)
 	dest[j] = '\0';
 	return (dest);
 }
-

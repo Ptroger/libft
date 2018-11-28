@@ -6,7 +6,7 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:45:52 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/26 18:45:54 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 17:26:33 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char * ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
+	result[i] = '\0';
 	return (result);
 }

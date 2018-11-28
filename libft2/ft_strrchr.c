@@ -6,7 +6,7 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 13:09:13 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/26 18:58:34 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 14:12:51 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 
 	j = 0;
 	i = 0;
+	if (s[j] == '\0' && c == '\0')
+		return ((char*)s);
 	while (s[j])
 		j++;
 	i = j;
@@ -28,6 +30,6 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + i);
 		i--;
 	}
-	return ((char *)s + j);
+	return (NULL);
 }
 

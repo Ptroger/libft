@@ -6,36 +6,37 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 11:46:00 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/28 10:24:21 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 18:53:21 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char			*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
-	size_t	len;
 	int		i;
+	int		len;
 	int		c; 
 	char	*new;
 
-	c = 0;
-	len = 0;
+	c = ft_strlen(s);
 	i = 0;
-	len = ft_trimlen((char*)(s), len);
-
-	if (!(new = (char *) malloc (sizeof(new) * len + 2)))
+	while (ft_isspace(s[c - 1]))
+		c--;
+	while (ft_isspace(s[i]))
+		i++;
+	len = c - i;
+	if (len <= 0)
+		return (new = ft_strnew(1));
+	if (!(new = ft_strnew(len)))
 		return (NULL);
-	while (s[i])
+	c = 0;
+	while (c < len)
 	{
-		while (ft_isspace(s[i]))
-			i++;
 		new[c] = s[i];
 		c++;
 		i++;
 	}
-	//new[c] = '\n';
-	//new[c++] = '\0';
+	new[c] = '\0';
 	return (new);
 }

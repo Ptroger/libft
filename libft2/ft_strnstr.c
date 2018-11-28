@@ -6,33 +6,37 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 12:23:14 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/27 11:25:07 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 16:50:13 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+char *ft_strnstr(const char *big, const char *lit, size_t len)
 {
-	size_t	c;
-	size_t	i;
-	int		j;
+	size_t i;
+	int pos;
+	int length;
 
-	j = 0;
 	i = 0;
-	c = 0;
-	while (s2[j])
-		j++;
-	while (s1[i] && c <= len)
+	pos = 0;
+	length = 0;
+	while (lit[length] != '\0')
+		length++;
+	if (length == 0)
+		return ((char *)big);
+	while (big[i] && len >= i)
 	{
-		while (s1[c + i] == s2[i] && c <= len)
+		while (lit[pos] == big[i + pos] && i + pos <= len)
 		{
-			if (i == c - 1)
-				return ((char *)s1 + c);
-			i++;
+			if (pos == length - 1)
+			{
+				return ((char *)big + i);
+			}
+			pos++;
 		}
-		i = 0;
-		c++;
+		pos = 0;
+		i++;
 	}
 	return (NULL);
 }

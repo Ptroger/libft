@@ -6,16 +6,16 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 17:24:25 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/26 18:38:33 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 11:31:53 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int i;
+	long i;
 	int signe;
-	int nb;
+	long nb;
 
 	nb = 0;
 	signe = 1;

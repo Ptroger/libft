@@ -6,7 +6,7 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:45:27 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/26 18:45:33 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 17:01:03 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (i < ft_strlen(s))
 	{
-		((*f)(i, s));
+		((*f)(i, s + i));
 		i++;
 	}
 }

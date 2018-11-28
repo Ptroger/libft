@@ -2,9 +2,5 @@
 
 void	ft_strclr(char *s)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		s[i] = '\0';
+	ft_bzero(s, ft_strlen(s));
 }

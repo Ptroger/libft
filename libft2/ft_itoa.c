@@ -6,7 +6,7 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:42:18 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/26 18:54:48 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/28 19:09:07 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,37 @@ int		static len(int nb)
 char	*ft_itoa(int nb)
 {
 	char	*str;
-	int		n;
 	int		i;
 
-	n = nb;
-	i = len(n);
-	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+	i = len(nb);
+	if (!(str = ft_strnew(i + 1)))
 		return (NULL);
+	if (nb == -2147483648)
+		return (str = "–2147483648\0");
 	str[i--] = '\0';
-	if (n == 0)
+	if (nb == 0)
 	{
 		str[0] = 48;
 		return (str);
 	}
-	if (n < 0)
+	if (nb < 0)
 	{
 		str[0] = '-';
-		n = n * -1;
+		nb = nb * -1;
 	}
-	while (n > 0)
+	while (nb > 0)
 	{
-		str[i] = 48 + (n % 10);
-		n = n / 10;
+		str[i] = 48 + (nb % 10);
+		nb = nb / 10;
 		i--;
 	}
 	return (str);
+}
+
+int	main()
+{
+	int nb = -2147483648;
+	printf("%s\n", ft_itoa(nb));
+//	printf("%s\n", itoa(nb));
+	return (0);
 }
