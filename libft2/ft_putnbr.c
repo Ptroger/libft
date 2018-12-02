@@ -6,7 +6,7 @@
 /*   By: ptroger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:43:10 by ptroger           #+#    #+#             */
-/*   Updated: 2018/11/26 18:43:16 by ptroger          ###   ########.fr       */
+/*   Updated: 2018/11/30 12:02:43 by ptroger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void	ft_putnbr(int n)
 		ft_putchar('-');
 		n = n * -1;
 	}
-	if (n > 0 && n < 10)
+	if (n >= 10)
 	{
-		ft_putchar(n + 48);
-		return ;
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + 48);
 	}
-	ft_putnbr(n / 10);
-	ft_putchar(n % 10 + 48);
+	else
+		ft_putchar(n + 48);
 }
